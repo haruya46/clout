@@ -12,6 +12,6 @@ add_action('after_setup_theme', 'mytheme_setup');
 
 // CSS・JSの読み込み
 function mytheme_enqueue_scripts() {
-  wp_enqueue_style('main-style', get_stylesheet_uri());
+  wp_enqueue_style('main-style', get_stylesheet_uri(). '/style.css');
 }
 add_action('wp_enqueue_scripts', 'mytheme_enqueue_scripts');

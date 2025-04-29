@@ -10,19 +10,19 @@
 
   <header>
     <h1><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
-    <p><?php bloginfo('description'); ?></p>
   </header>
 
   <main>
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-      <article>
-        <h2><?php the_title(); ?></h2>
-        <?php the_content(); ?>
-      </article>
-    <?php endwhile; else : ?>
-      <p>記事が見つかりませんでした。</p>
-    <?php endif; ?>
-  </main>
+  <div class="main">
+    <?php
+      if (have_posts()) :
+        while (have_posts()) : the_post();
+          the_content(); // ← 管理画面で入力した内容がここに出る！
+        endwhile;
+      endif;
+    ?>
+  </div>
+</main>
 
   <footer>
     <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
