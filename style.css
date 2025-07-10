@@ -1,0 +1,80 @@
+/*
+Theme Name: Clout
+Description: 企業サイト用オリジナルテーマ
+Author: あなたの名前
+Version: 1.0
+*/
+
+
+body{
+    display: flex;
+    margin: 0;
+    padding: 0px;
+    max-width: 1080px;
+}
+.logo{
+    text-align: center;
+}
+.logo img{
+    width: 200px;
+}
+.logo p{
+    margin-top: -50px;
+    font-size: 12px;
+
+}
+.sidebar{
+    width: 20%;
+
+}
+.sidebar ul{
+    text-align: center;
+}
+.sidebar li{
+    text-align: left;
+    list-style: none;
+    padding-bottom: 30px;
+    margin: 0 auto;
+    
+}
+.sidebar nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+.sidebar nav ul li {
+    list-style: none;
+    margin-bottom: 30px;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+.sidebar nav ul li a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+.contact{
+    text-align: center;
+}
+.contact a{
+    text-decoration: none;      
+    color: black;
+    margin-left:15px;
+    padding-bottom: 30px;
+    font-size: 12px;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 0 auto;
+    margin-left: -10px;
+}
+.contact p{
+    font-size: 12px;
+}
+
+
+
+    

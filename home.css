@@ -1,0 +1,45 @@
+/* home-page 固定ページ専用CSS */
+.main-visual{
+    width: 80%;
+    margin: 0 auto;
+}
+/* メインビジュアルの画像を明るくする例 */
+.main-visual img {
+    filter: brightness(1.1);
+    width: 100px;
+
+}
+
+/* セクションタイトルの色を変更 */
+.section-title {
+    color: #0077cc;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* businessリストの背景色を変更 */
+.business-list {
+    background: #f0f8ff;
+    padding: 30px 0;
+    border-radius: 10px;
+}
+
+/* recruitリストのボタンデザイン */
+.recruit-list .btn {
+    background: #0077cc;
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.recruit-list .btn:hover {
+    background: #005fa3;
+}
+
+/* 必要に応じて他の要素もカスタマイズ */
