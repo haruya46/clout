@@ -1,16 +1,18 @@
 /*
 Theme Name: Clout
 Description: 企業サイト用オリジナルテーマ
-Author: あなたの名前
+Author: 平山晴也
 Version: 1.0
 */
 
 
-body{
-    display: flex;
+body {
     margin: 0;
-    padding: 0px;
-    max-width: 1080px;
+    padding: 0;
+    background: #fff;
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 .logo{
     text-align: center;
@@ -73,6 +75,12 @@ body{
 }
 .contact p{
     font-size: 12px;
+}
+.main-content{
+    display: flex;
+    flex-direction: column;  /* 横方向の中央寄せ */
+    align-items: center;
+    width: 100%;
 }
 
 

@@ -5,7 +5,7 @@ add_theme_support('title-tag');
 function clout_enqueue_styles() {
     wp_enqueue_style('clout-style', get_stylesheet_uri());
 
-    if (is_page('home-page')) {
+    if (is_page('home')) {
         wp_enqueue_style('home', get_template_directory_uri() . '/home.css');
     }
     if (is_page('company')) {
