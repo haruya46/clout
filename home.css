@@ -38,3 +38,36 @@
     text-align: left; 
     opacity: 0.5;
 }
+
+.recruit-section{
+    text-align: center;
+    width: 100%;
+}
+
+.recruit-title{
+    margin-top: 15%;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10%;
+}
+
+.recruit-item{
+    display: flex;
+}
+.recruit-img{
+    width: 40%;
+    margin: 0 auto;
+}
+.recruit-img img{
+    aspect-ratio: 16 / 9;
+    object-fit: cover; 
+    width: 100%;
+}
+.recruit-text{
+    width: 40%;
+    margin: 0 auto;
+    text-align: left;
+}
+.recruit-text a{
+    float: right;
+}
