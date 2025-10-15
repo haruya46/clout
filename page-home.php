@@ -38,19 +38,40 @@
 
 
 <section class="recruit-section" id="recruit">
-  <div class="recruit-title">recruit</div>
+  <div class="recruit-title">Recruit</div>
   <div class="recruit-list-wrapper">
-    <div class="recruit-item">
-      <div class="recruit-img">
-        <img src="<?php echo get_template_directory_uri(); ?>/image/31722824_m.jpg" alt="メインビジュアル">
-      </div>
-      <div class="recruit-text">
-        <h3 class="recruit-heading">イベント事業</h3>
-        <p class="recruit-desc">各著作会社で行っているイベントに参加しスマホやインターネットの販促を促進しクライアント様に対し反芻</p>
-        <a href="#" class="recruit-btn">more</a>
 
+    <?php
+    $args = array(
+        'post_type' => 'recruit',
+        'posts_per_page' => -1,
+    );
+    $recruit_posts = new WP_Query($args);
+    if ($recruit_posts->have_posts()):
+        while ($recruit_posts->have_posts()): $recruit_posts->the_post();
+    ?>
+      <div class="recruit-item">
+        <div class="recruit-img">
+          <?php if (has_post_thumbnail()): ?>
+            <a href="<?php the_permalink(); ?>">
+              <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>">
+            </a>
+          <?php endif; ?>
+        </div>
+        <div class="recruit-text">
+          <h3 class="recruit-heading"><?php the_title(); ?></h3>
+          <p class="recruit-desc"><?php the_excerpt(); ?></p>
+          <a href="<?php the_permalink(); ?>" class="recruit-btn">more</a>
+        </div>
       </div>
-    </div>
+    <?php
+        endwhile;
+        wp_reset_postdata();
+    else:
+        echo '<p>募集情報はまだありません。</p>';
+    endif;
+    ?>
+
   </div>
 </section>
 

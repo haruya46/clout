@@ -1,0 +1,70 @@
+.contact-section {
+    width:100%;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.contact-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.contact-form-wrapper {
+    background-color: #f8f8f8;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.contact-form-wrapper input,
+.contact-form-wrapper textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form-wrapper button {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form-wrapper button:hover {
+    background-color: #555;
+}
+
+.wpcf7-submit {
+    width: 30%;
+    display: block;       /* ブロックにする */
+    margin: 0 auto;       /* 左右中央寄せ */
+    padding: 10px;        /* 高さ調整 */
+    font-size: 16px;      /* 文字サイズ調整 */
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.wpcf7-submit:hover {
+    background-color: #555;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-title {
+        font-size: 25px;
+    }
+    .contact-section {
+        max-width:100%;
+        margin: 50px auto;
+        padding: 20px;
+    }
+
+}
