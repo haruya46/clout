@@ -9,7 +9,7 @@
 <body id="home" <?php body_class(); ?>>
   <div id="sidebar" class="sidebar">
     <div class="logo">
-      <img src="<?php echo get_template_directory_uri(); ?>/image/ClOUT.png" alt="CLOUT">
+      <img src="<?php echo get_template_directory_uri(); ?>/image/CLOUT.png" alt="CLOUT">
       <p>株式会社CLOUT</p>
     </div>
     <nav class="sidebar-nav">

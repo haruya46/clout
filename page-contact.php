@@ -5,8 +5,7 @@
     <div class="contact-form-wrapper">
         <?php
         // Contact Form 7 のショートコード
-        echo do_shortcode('[contact-form-7 id="4c1957b" title="contact"]
-');
+        echo do_shortcode('[contact-form-7 id="4c1957b" title="contact"]');
         ?>
     </div>
 </section>
