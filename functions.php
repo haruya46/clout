@@ -2,31 +2,92 @@
 // 最低限のテーマサポート
 add_theme_support('title-tag');
 add_theme_support('post-thumbnails');
-
 function clout_enqueue_assets() {
-    // CSS
-    wp_enqueue_style('clout-style', get_stylesheet_uri());
 
+    // style.css（テーマのメインCSS）
+    $style_path = get_stylesheet_directory() . '/style.css';
+    wp_enqueue_style(
+        'clout-style',
+        get_stylesheet_uri(),
+        array(),
+        file_exists($style_path) ? filemtime($style_path) : null
+    );
+
+    // ページ別CSS
     if (is_page('home')) {
-        wp_enqueue_style('home', get_template_directory_uri() . '/home.css');
+        $path = get_template_directory() . '/home.css';
+        wp_enqueue_style(
+            'home',
+            get_template_directory_uri() . '/home.css',
+            array('clout-style'),
+            file_exists($path) ? filemtime($path) : null
+        );
+
     } elseif (is_page('company')) {
-        wp_enqueue_style('company', get_template_directory_uri() . '/company.css');
+        $path = get_template_directory() . '/company.css';
+        wp_enqueue_style(
+            'company',
+            get_template_directory_uri() . '/company.css',
+            array('clout-style'),
+            file_exists($path) ? filemtime($path) : null
+        );
+
     } elseif (is_singular('recruit')) {
-        wp_enqueue_style('recruit', get_template_directory_uri() . '/recruit.css');
+        $path = get_template_directory() . '/recruit.css';
+        wp_enqueue_style(
+            'recruit',
+            get_template_directory_uri() . '/recruit.css',
+            array('clout-style'),
+            file_exists($path) ? filemtime($path) : null
+        );
+
     } elseif (is_page('contact')) {
-        wp_enqueue_style('contact', get_template_directory_uri() . '/contact.css');
+        $path = get_template_directory() . '/contact.css';
+        wp_enqueue_style(
+            'contact',
+            get_template_directory_uri() . '/contact.css',
+            array('clout-style'),
+            file_exists($path) ? filemtime($path) : null
+        );
     }
 
-    // JS（ハンバーガーメニューなど）
+    // JS
+    $js_path = get_template_directory() . '/sidebar.js';
     wp_enqueue_script(
         'sidebar-js',
         get_template_directory_uri() . '/sidebar.js',
-        array(), // 依存スクリプトがあれば追加（例: array('jquery')）
-        filemtime(get_template_directory() . '/sidebar.js'),
-        true // フッターで読み込む
+        array(),
+        file_exists($js_path) ? filemtime($js_path) : null,
+        true
     );
 }
 add_action('wp_enqueue_scripts', 'clout_enqueue_assets');
+
+
+// function clout_enqueue_assets() {
+//     // CSS
+//     wp_enqueue_style('clout-style', get_stylesheet_uri());
+
+//     if (is_page('home')) {
+//         wp_enqueue_style('home', get_template_directory_uri() . '/home.css');
+//     } elseif (is_page('company')) {
+//         wp_enqueue_style('company', get_template_directory_uri() . '/company.css');
+//     } elseif (is_singular('recruit')) {
+//         wp_enqueue_style('recruit', get_template_directory_uri() . '/recruit.css');
+//     } elseif (is_page('contact')) {
+//         wp_enqueue_style('contact', get_template_directory_uri() . '/contact.css');
+//     }
+
+//     // JS（ハンバーガーメニューなど）
+//     wp_enqueue_script(
+//         'sidebar-js',
+//         get_template_directory_uri() . '/sidebar.js',
+//         array(), // 依存スクリプトがあれば追加（例: array('jquery')）
+//         filemtime(get_template_directory() . '/sidebar.js'),
+//         true // フッターで読み込む
+//     );
+// }
+// add_action('wp_enqueue_scripts', 'clout_enqueue_assets');
 
 
 // 事業内容カスタム投稿タイプ
