@@ -1,70 +1,129 @@
 .contact-section {
-    width:100%;
+    width: 100%;
     margin: 50px auto;
     padding: 20px;
-}
-
-.contact-title {
+  }
+  
+  .contact-title {
     font-size: 36px;
     text-align: center;
     margin-bottom: 30px;
     font-weight: bold;
-}
-
-.contact-form-wrapper {
-    background-color: #f8f8f8;
+  }
+  
+  .contact-form-wrapper {
     padding: 30px;
     border-radius: 10px;
-}
-
-.contact-form-wrapper input,
-.contact-form-wrapper textarea {
+  }
+  
+  /* 入力系（submit以外） */
+  .contact-form-wrapper input:not([type="submit"]),
+  .contact-form-wrapper textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-.contact-form-wrapper button {
+    box-sizing: border-box;
+  }
+  
+  /* 送信ボタン：CF7は基本 input[type="submit"] */
+  .contact-form-wrapper input[type="submit"],
+  .contact-form-wrapper button {
     background-color: #333;
     color: #fff;
     padding: 12px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.contact-form-wrapper button:hover {
+    width: 100%;
+  }
+  
+  .contact-form-wrapper input[type="submit"]:hover,
+  .contact-form-wrapper button:hover {
     background-color: #555;
-}
-
-.wpcf7-submit {
-    width: 30%;
-    display: block;       /* ブロックにする */
-    margin: 0 auto;       /* 左右中央寄せ */
-    padding: 10px;        /* 高さ調整 */
-    font-size: 16px;      /* 文字サイズ調整 */
+  }
+  
+  /* ---- Contact Form 7（このページ内だけ） ---- */
+  .contact-section .wpcf7 {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  /* ラベル */
+  .contact-section .wpcf7-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* 必須表示（CF7側で <span class="required">必須</span> 等にしてる前提） */
+  .contact-section .wpcf7-form .required {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+    font-size: 12px;
+  }
+  
+  /* textarea */
+  .contact-section .wpcf7-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    background-color: #fff;
+    height: 150px;
+    resize: vertical;
+    box-sizing: border-box;
+  }
+  
+  /* CF7送信ボタン（上の .contact-form-wrapper と揃えるなら色は#333のままでOK）
+     ここで上書きしたい場合だけ使う */
+  .contact-section .wpcf7-form input[type="submit"] {
     background-color: #333;
     color: #fff;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-}
-
-.wpcf7-submit:hover {
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-section .wpcf7-form input[type="submit"]:hover {
     background-color: #555;
-}
-
-@media screen and (max-width: 768px) {
+  }
+  
+  /* エラー/成功 */
+  .contact-section .wpcf7-form .wpcf7-not-valid-tip {
+    color: red;
+    font-size: 14px;
+  }
+  
+  .contact-section .wpcf7 form.sent .wpcf7-response-output {
+    border-color: #46b450;
+  }
+  
+  .contact-section .wpcf7 form.invalid .wpcf7-response-output,
+  .contact-section .wpcf7 form.failed .wpcf7-response-output,
+  .contact-section .wpcf7 form.aborted .wpcf7-response-output {
+    border-color: #dc3232;
+  }
+  
+  @media screen and (max-width: 768px) {
     .contact-title {
-        font-size: 25px;
+      font-size: 25px;
     }
     .contact-section {
-        max-width:100%;
-        margin: 50px auto;
-        padding: 20px;
+      max-width: 100%;
+      margin: 50px auto;
+      padding: 20px;
     }
-
-}
+  }
+  
