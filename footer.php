@@ -5,10 +5,9 @@
     <div class="company">
         <div class="company-info">
             <p>株式会社CLOUT</p>
-            <p>本社: 大阪府大阪市まるまる1-5-3</p>
-            <p>電話番号: 000-000-0000</p>
+            <p>メール: info@cloutworks.net</p>
             <p>従業員数: 10人</p>
-            <p>代表者名: 陣田聖也</p>
+            <p>代表者名: 陣田聖弥</p>
         </div>
         <?php
             $page = get_page_by_path('contact'); // スラッグが contact の固定ページを取得
