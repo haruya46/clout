@@ -30,7 +30,6 @@
     ?>
     <div class="contact">
       <a href="<?php echo esc_url($contact_url); ?>">お問い合わせ</a>
-      <p>TEL: 000-000-0000</p>
     </div>
     <div class="hamburger" id="hamburger">
       <span></span>
